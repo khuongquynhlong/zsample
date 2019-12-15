@@ -15,7 +15,7 @@ __Nội dung__
 # 1. Cài đặt gói
 Để cài đặt gói, gõ câu lệnh sau vào STATA 
 
-Chú ý: máy tính cần kết nối internet để cài được gói
+Chú ý: máy tính cần kết nối internet để cài được gói. Chỉ cần cài 1 lần duy nhất
 
 ```{js}
 net install zsample, from("https://khuongquynhlong.github.io/zsample/")
