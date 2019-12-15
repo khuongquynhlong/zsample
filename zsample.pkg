@@ -1,0 +1,15 @@
+d 'ZSAMPLE': Package tinh co mau them cho Stata
+d version 4.1.0  16mar2007
+d PGS.TS.BS. Do Van Dung
+d Truong Dai hoc Y TP.HCM
+d Copyright © DVD 2007
+
+F zesampsi.ado
+F zesampsi.dlg
+F zmsampsi.ado
+F zmsampsi.dlg
+F zpsampsi.ado
+F zpsampsi.dlg
+F zsample.ado
+F zssampsi.dlg
+F zssampsi.ado

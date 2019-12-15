@@ -1,0 +1,3 @@
+v version 4.1.0  16mar2007
+d 'ZSAMPLE': Package tinh co mau them cho Stata
+p zsample

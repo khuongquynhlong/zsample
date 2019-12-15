@@ -1,0 +1,52 @@
+VERSION 9.0
+POSITION . . 410 250
+DIALOG main, label("zesampsi - Calculate sample size for analytical epidemilogical study") tabtitle("Main")
+BEGIN
+  TEXT     tx_p1      10  10   120  ., label("Proportion 1")
+  EDIT     ed_p1      10  +20  120  ., error("Proportion 1") default(0.1)
+  TEXT     tx_or       10  +25   120  ., label("Odds Ratio:")
+  EDIT     ed_or       10  +20  120  ., error("Odds Ratio") default(3)
+  TEXT     tx_power       10  +25   120  ., label("Power:")
+  EDIT     ed_power       10  +20  120  ., error("Power") default(0.9)
+  TEXT     tx_alpha       10  +25   120  ., label("Alpha:")
+  COMBOBOX  ed_alpha       10  +20  120  ., dropdownlist contents(type_alpha) default(0.05)
+  TEXT     tx_ratio       10  +25   120  ., label("Controls/Cases Ratio")
+  EDIT     ed_ratio       10  +20  120  ., error("Ratio") default(1)
+END
+
+LIST type_alpha
+BEGIN
+  0.10
+  0.05
+  0.01
+  0.005
+  0.001
+END
+
+
+OK ok1,      label("OK")
+CANCEL can1, label("Cancel")
+SUBMIT sub1, label("Submit")
+HELP hlp1,   view("help sampsi")
+RESET res1
+COPY copy1
+
+PROGRAM command
+BEGIN
+	put "zesampsi "
+	require main.ed_p1
+	put main.ed_p1
+	put ", or("
+	require main.ed_or
+	put main.ed_or
+	put ") power("
+	require main.ed_power
+	put main.ed_power
+	put ") alpha("
+	require main.ed_alpha
+	put main.ed_alpha
+	put ") ratio("
+	require main.ed_ratio
+	put main.ed_ratio
+	put ")"
+END

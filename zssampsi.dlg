@@ -1,0 +1,34 @@
+VERSION 9.0
+
+POSITION . . 410 250
+
+DIALOG main, label("zssampsi - Calculate sample size") tabtitle("Main")
+BEGIN
+  TEXT     tx_gen      10  10   120  ., label("Proportion")
+  EDIT     ed_gen      10  +20  120  ., error("Proportion") default(0.5)
+  TEXT     tx_sd       10  +25   120  ., label("Marginal Error:")
+  EDIT     ed_sd       10  +20  120  ., error("Marginal Error") default(0.1)
+  TEXT     tx_des      10  +25   120  ., label("Design coefficient:")
+  EDIT     ed_des      10  +20  120  ., error("Design coefficient") default(1)
+END
+
+OK ok1,      label("OK")
+CANCEL can1, label("Cancel")
+SUBMIT sub1, label("Submit")
+HELP hlp1,   view("help sampsi")
+RESET res1
+COPY copy1
+
+PROGRAM command
+BEGIN
+	put "zssampsi, proportion("
+	require main.ed_gen
+	put main.ed_gen
+	put ") error("
+	require main.ed_sd
+	put main.ed_sd
+	put ") design("
+	require main.ed_des
+	put main.ed_des
+	put ")"
+END
