@@ -6,10 +6,10 @@ Package tính cỡ mẫu cho Stata, được viết bởi PGS.TS.BS Đỗ Văn D
 <br>
 
 __Nội dung__  
-1. [Cài đặt gói](#1-install-package)
-2. [Cỡ mẫu ước lượng 1 tỉ lệ](#2-one-proportion)
-3. [Cỡ mẫu ước lượng 1 trung bình](#3-one-mean)
-4. [Một số chức năng khác - đang update](#4-update)
+1. [Cài đặt gói](#1-Cài-đặt-gói)
+2. [Cỡ mẫu ước lượng 1 tỉ lệ](#2-Cỡ-mẫu-ước-lượng-1-tỉ-lệ)
+3. [Cỡ mẫu ước lượng 1 trung bình](#3-Cỡ-mẫu-ước-lượng-1-trung-bình)
+4. [Một số chức năng khác - đang update](#4-Một-số-chức-năng-khác)
 
 
 # 1. Cài đặt gói
@@ -77,7 +77,9 @@ Ví dụ
 zmsampsi, sd(1) error(0.1) level(95) design(1)
 ```
 
-# 4. Một số chức năng khác - đang update
+# 4. Một số chức năng khác 
+
+(Đang update)
 
 | Subcommand      | Description                                                 |
 |--------------   |-------------------------------------------------------------|
