@@ -1,0 +1,41 @@
+VERSION 9.0
+
+POSITION . . 410 250
+
+DIALOG main, label("zrandomize - Single and Block randomization") tabtitle("Main")
+BEGIN
+  TEXT     tx_drug      10  10   120  ., label("Investigational group")
+  EDIT     ed_drug      10  +20  120  ., error("Investigational group") default("New_Drug")
+  TEXT     tx_control   10  +25   120  ., label("controlled Group")
+  EDIT     ed_control   10  +20  120  ., error("controlled Group") default("Placebo")
+  TEXT     tx_nsub      10  +25   120  ., label("Total subjects")
+  EDIT     ed_nsub      10  +20  120  ., error("Total subjects") default(10)
+  TEXT     tx_block     10  +25   120  ., label("Block size (-1 for random block size)")
+  EDIT     ed_block     10  +20  120  ., error("Block size") default(0)
+END
+
+OK ok1,      label("OK")
+CANCEL can1, label("Cancel")
+SUBMIT sub1, label("Submit")
+HELP hlp1,   view("help sampsi")
+RESET res1
+COPY copy1
+
+PROGRAM command
+BEGIN
+	put "zrandomize "
+	require main.ed_drug
+	put main.ed_drug
+	put " "
+	require main.ed_control
+	put main.ed_control
+	put ", nsubject("
+	require main.ed_nsub
+	put main.ed_nsub
+	put ") block("
+	require main.ed_block
+	put main.ed_block
+	put ")"
+END
+
+
